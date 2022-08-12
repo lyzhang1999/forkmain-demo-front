@@ -1,8 +1,36 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+<script  lang="ts">
 import AddBook from './components/addBook.vue'
 import BookList from './components/bookList.vue'
+import { getEnv } from './api/env'
+import { getBookList } from './api/book'
+import { defineComponent, ref, watchEffect } from 'vue';
+
+export default defineComponent({
+  components: {
+		BookList,
+		AddBook
+  },
+  setup() {
+    //env
+    const currentEnv = ref("")
+    getEnv().then(env => {
+     currentEnv.value = env
+    })
+
+
+    //booklist
+    const bookList = ref({})
+    getBookList().then(list => {
+      
+    })
+    return { 
+      currentEnv,
+      bookList
+    }
+  }
+})
+
+
 </script>
 
 <template>
@@ -12,7 +40,7 @@ import BookList from './components/bookList.vue'
     <h2 class="h2">Welcome to ForkMain Demo</h2>
   </div>
   
-    <h3>You are viewing envirment:</h3>
+    <h3>You are viewing envirment:{{currentEnv}}</h3>
     <p>This is a demo application built on Golang, Gin Framework, Typescript, Vue.js, and PostgreSQL. Try to fork a envirment and make some code changes</p>
   </div>
   <div class="booksDemo">
