@@ -32,7 +32,7 @@ export default defineComponent({
   <div class="current-env">
     <h3>You are viewing envirment: &nbsp;</h3><h3 class="h3-env"> {{currentEnv}}</h3>
     </div>
-    <p>This is a demo application built on Golang, Gin Framework, Typescript, Vue.js, and PostgreSQL. Try to fork a envirment and make some code changes.</p>
+    <p>This is a demo application built on Golang, Gin Framework, Typescript, Vue.js, and PostgreSQL. Try to fork an envirment and make some code changes.</p>
   </div>
   <div class="booksDemo">
     <AddBook/>
