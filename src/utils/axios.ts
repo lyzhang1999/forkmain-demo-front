@@ -1,5 +1,5 @@
 import axios, {AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse} from 'axios';
-import {get} from "lodash-es";
+// import {get} from "lodash-es";
 
 export const baseURL = import.meta.env.VITE_PUBLIC_DOMAIN
 console.log('[ baseURL ] >', baseURL)
@@ -15,15 +15,15 @@ http.interceptors.request.use((config: AxiosRequestConfig) => {
   return Promise.reject(err);
 })
 
-http.interceptors.response.use((res: AxiosResponse) => {
-  let {data} = res;
-  return data;
-}, (err) => {
-  let url = get(err, ['config', 'url'], '');
-  url = url.split('?')[0];
-  let data = get(err, 'response.data', {});
+// http.interceptors.response.use((res: AxiosResponse) => {
+//   let {data} = res;
+//   return data;
+// }, (err) => {
+//   let url = get(err, ['config', 'url'], '');
+//   url = url.split('?')[0];
+//   let data = get(err, 'response.data', {});
 
-  return Promise.reject(err);
-})
+//   return Promise.reject(err);
+// })
 
 export default http;
