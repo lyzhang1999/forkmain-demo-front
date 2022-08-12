@@ -40,7 +40,7 @@ export default defineComponent({
     <h2 class="h2">Welcome to ForkMain Demo</h2>
   </div>
   
-    <h3>You are viewing envirment:{{currentEnv}}</h3>
+    <h3>You are viewing envirment:</h3>
     <p>This is a demo application built on Golang, Gin Framework, Typescript, Vue.js, and PostgreSQL. Try to fork a envirment and make some code changes</p>
   </div>
   <div class="booksDemo">
