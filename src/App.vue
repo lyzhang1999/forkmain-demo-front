@@ -16,8 +16,8 @@ import BookList from './components/bookList.vue'
     <p>This is a demo application built on Golang, Gin Framework, Typescript, Vue.js, and PostgreSQL. Try to fork a envirment and make some code changes</p>
   </div>
   <div class="booksDemo">
-    <AddBook></AddBook>
-    <BookList></BookList>
+    <AddBook/>
+    <BookList/>
   </div>
 
 </template>
