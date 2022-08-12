@@ -29,7 +29,7 @@ export const deleteBook = (req:number): Promise<null> => {
 }
 
 //get booklist
-interface BookItem extends Book{
+export interface BookItem extends Book{
   "ID": number,
   "CreatedAt": string,
   "UpdatedAt": string,

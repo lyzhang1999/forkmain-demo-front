@@ -1,15 +1,15 @@
 <script setup  lang="ts">
 import { ref,reactive } from 'vue'
 
-import {addBook, getBookList,deleteBook ,editBook} from '../api/book'
+import {addBook, getBookList,deleteBook ,editBook,BookItem} from '../api/book'
 const formData = reactive( {
   title: "",
   author: "",
   description:"",
 })
 //booklist
-const bookList = ref({})
-const titleInput = ref(null)
+const bookList = ref<BookItem[]>([])
+const titleInput = ref<HTMLInputElement>()
 
 //编辑标识
 const isEditStatus = ref(false)
@@ -44,11 +44,11 @@ getBookList().then(list => {
   bookList.value = list
 })
 
-const editBookItem = (book) => {
+const editBookItem = (book: BookItem) => {
   // editBook(book)
   isEditStatus.value = true 
   editId.value = book.ID
-  titleInput.value.focus()
+  titleInput.value && titleInput.value.focus()
   formData.title=book.title,
   formData.author= book.author,
   formData.description= book.description
@@ -57,7 +57,7 @@ const editBookItem = (book) => {
   
 }
 
-const deleteBookItem = (id) => {
+const deleteBookItem = (id: BookItem['ID']) => {
   deleteBook(id).then(() => {
     getBookList().then(list => {
       bookList.value = list
@@ -91,7 +91,7 @@ const deleteBookItem = (id) => {
   </div>
 
     <ul class="bookList-ul">
-    <li v-for="book in bookList">
+    <li v-for="(book, index) in bookList" :key="index">
       <div class="row">
           <div class="operation">
             <div class="edit" @click="editBookItem(book)">Edit</div>
