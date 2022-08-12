@@ -2,6 +2,7 @@
 import http from "../utils/axios";
 
 
-export interface env {
-  env: string;
-}
+
+export const getEnv = (): Promise<string> => {
+  return http.get(`/env`);
+};
