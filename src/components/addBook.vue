@@ -70,7 +70,7 @@ const deleteBookItem = (id: BookItem['ID']) => {
 <template>
   <div class="container">
     <h2 v-if="!isEditStatus">Add a book</h2>
-    <h2 v-else>Edit a book</h2>
+    <h2 v-else>Edit</h2>
     <form  class="form" >
       <div class="form-example">
         <label class="control-label" for="name">Title: </label>
