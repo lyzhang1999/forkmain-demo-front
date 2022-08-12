@@ -43,7 +43,7 @@ import { ref } from 'vue'
 <style scoped>
 .row{
   position: relative;
-  margin-bottom: 45 px;
+  margin-bottom: 45px;
   border: 1px solid #888;
   border-radius:6px;
   padding:10px 40px;
