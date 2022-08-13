@@ -30,7 +30,7 @@ export default defineComponent({
     <h2 class="h2">Welcome to ForkMain Demo</h2>
   </div>
   <div class="current-env">
-    <h3>You are viewing envirment: &nbsp;</h3><h3 class="h3-env"> {{currentEnv}}</h3>
+    <h3>You are viewing environment(branch): &nbsp;</h3><h3 class="h3-env"> {{currentEnv}}</h3>
     </div>
     <p>This is a demo application built on Golang, Gin Framework, Typescript, Vue.js, and PostgreSQL. Try to fork an envirment and make some code changes.</p>
   </div>
@@ -69,6 +69,6 @@ export default defineComponent({
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 20px;
+  font-size: 24px;
 }
 </style>

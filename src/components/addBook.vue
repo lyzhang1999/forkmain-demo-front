@@ -81,8 +81,8 @@ const deleteBookItem = (id: BookItem['ID']) => {
         <input type="text" name="author" id="author" v-model="formData.author" class="form-input" required>
       </div>
         <div class="form-example">
-        <label class="control-label"  for="describers">Describers: </label>
-        <textarea type="describers" name="describers" id="describers" class="form-input" v-model="formData.description"  required></textarea>
+        <label class="control-label"  for="describers">Description: </label>
+        <textarea type="description" name="description" id="describers" class="form-input" v-model="formData.description"  required></textarea>
       </div>
       <div class="form-button">
         <input type="submit" value="Save" @click="submit" style="cursor: pointer;"/>
@@ -102,7 +102,7 @@ const deleteBookItem = (id: BookItem['ID']) => {
               <h2>{{book.title}}</h2>
               <p>{{book.author}}</p>
             </div>
-            <article class="bookDescribers">
+            <article class="bookDescription">
             {{book.description}}
             </article>
           </div>
@@ -152,7 +152,7 @@ const deleteBookItem = (id: BookItem['ID']) => {
   display: flex;
   justify-content: space-between;
 }
-.bookDescribers{
+.bookDescription{
   font-size: 14px;
   text-align: left;
 }
