@@ -4,7 +4,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY . .
 
-RUN yarn install && yarn build
+RUN 
 
 # nginx state for serving content
 FROM nginx:alpine AS runner
